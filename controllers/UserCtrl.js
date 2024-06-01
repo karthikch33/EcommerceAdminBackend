@@ -82,9 +82,17 @@ export const makeAdmin = asyncHandler(async (req,res)=>{
         
     } catch (error) {
         throw new Error(error)
-    }
+    }})
 
-})
+
+    export const serveronoroff = asyncHandler(async(req,res)=>{
+        try {
+          res.json({status:201,message:'serverOn'})
+        } catch (error) {
+          res.json({status:404,message:'serverOff'})
+        }
+      })
+    
 
 // admin login
 

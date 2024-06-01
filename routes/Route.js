@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { activeStatus, addToCompare, applyCoupon, blockuser, createOrder, createUser,deleteUser,emptyCart,emptyEntireCart,forgotPasswordToken,getAllOrders,getCompareItems,getOrders,getUserCart,getWishlist,getaUser,getallUser,handleRequestToken,loginAdmin,loginUserCtrl, logoutHandler, makeAdmin, resetPassword, saveAddress, unblockuser, updateOrderStatus, updatePassword, updateUser, userCart, } from "../controllers/UserCtrl.js";
+import { activeStatus, addToCompare, applyCoupon, blockuser, createOrder, createUser,deleteUser,emptyCart,emptyEntireCart,forgotPasswordToken,getAllOrders,getCompareItems,getOrders,getUserCart,getWishlist,getaUser,getallUser,handleRequestToken,loginAdmin,loginUserCtrl, logoutHandler, makeAdmin, resetPassword, saveAddress, serveronoroff, unblockuser, updateOrderStatus, updatePassword, updateUser, userCart, } from "../controllers/UserCtrl.js";
 import { authMiddleWare, isAdmin } from "../middlewares/authMiddleware.js";
 import { checkout, paymentVerification } from "../controllers/paymentCtrl.js";
 
@@ -8,6 +8,7 @@ const router = Router()
 
 
 router.route('/register').post(createUser)
+router.route('/serveronoroff').get(serveronoroff)
 router.route('/login').post(loginUserCtrl)
 router.route('/adminlogin').post(loginAdmin)
 router.route('/handlerequesttoken').get(handleRequestToken)
